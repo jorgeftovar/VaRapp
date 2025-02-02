@@ -7,9 +7,17 @@ import seaborn as sns
 import os
 from scipy.stats import norm, chi2
 
+# Deshabilitar el mensaje de bienvenida de Streamlit
+os.environ["STREAMLIT_SUPPRESS_ONBOARDING"] = "1"
+
 # Configurar el puerto de Streamlit basado en la variable de entorno
-port = int(os.environ.get("PORT", 8080))
+port = int(os.environ.get("PORT", 8501))
 st.set_page_config(page_title="VaR App")
+
+# Ejecutar Streamlit correctamente
+#if __name__ == "__main__":
+    #os.system(f"streamlit run main.py --server.port={port} --server.address=0.0.0.0")
+
 
 # Estilo de la tabla
 def highlight_sum(row):
